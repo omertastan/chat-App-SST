@@ -1,17 +1,18 @@
 import React from 'react'
+import { useSelector } from "react-redux";
 
 const List = () => {
-    const user = localStorage.getItem("userName")
+    const clientName = useSelector((state) => state.clientState.value);
 
 
 
     return (
         <div className='leftbar'>
-            <h2>Hello {user}</h2>
+            <h2>Hello {clientName ?? ""}</h2>
             <div>
                 <h4 className='leftbarHeader'>Active Client</h4>
                 <div className='leftbarHeaderClient'>
-                    <p >{user}</p>
+                    <p >{clientName ?? ""}</p>
                 </div>
             </div>
         </div>

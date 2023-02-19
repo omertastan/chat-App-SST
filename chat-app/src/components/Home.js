@@ -11,6 +11,7 @@ const Home = () => {
             alert("Name can not be blank !!")
         } else {
             localStorage.setItem("userName", name)
+            localStorage.setItem("userToken", name)
             navigate("/chatPage")
         }
 

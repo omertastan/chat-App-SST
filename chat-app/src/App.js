@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./components/Home"
 import ChatPage from "./components/ChatPage";
 import io from "socket.io-client"
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 const socket = io(
   'https://botty.alexgurr.com',
@@ -14,7 +15,9 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/chatPage" element={<ChatPage socket={socket} />}></Route>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/chatPage" element={<ChatPage socket={socket} />}></Route>
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>

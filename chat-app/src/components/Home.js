@@ -7,15 +7,22 @@ const Home = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        localStorage.setItem("userName", name)
-        navigate("/chat")
+        if (name === "") {
+            alert("Name can not be blank !!")
+        } else {
+            localStorage.setItem("userName", name)
+            navigate("/chatPage")
+        }
+
+
     }
     return (
         <form className='container' onSubmit={handleSubmit}>
-            <h2 className='header'>Sign in to Chat with Botty</h2>
+            <h4 className='header'>Sign in to Chat with Botty</h4>
             <label htmlFor="name">Name</label>
             <input type="text"
-                minLength={6}
+                placeholder='Enter a name'
+                minLength={3}
                 name="name"
                 id='name'
                 className='nameInput'

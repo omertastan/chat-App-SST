@@ -14,7 +14,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
+          <Route path="/chatPage" element={<ChatPage socket={socket} />}></Route>
         </Routes>
       </div>
     </BrowserRouter>

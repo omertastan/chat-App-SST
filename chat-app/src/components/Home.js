@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { setClient } from '../redux/slice/clientList';
 
 const Home = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch();
     const [name, setName] = useState("")
 
     const handleSubmit = (e) => {
@@ -10,7 +13,7 @@ const Home = () => {
         if (name === "") {
             alert("Name can not be blank !!")
         } else {
-            localStorage.setItem("userName", name)
+            dispatch(setClient(name))
             localStorage.setItem("userToken", name)
             navigate("/chatPage")
         }

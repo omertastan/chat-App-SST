@@ -1,10 +1,17 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux";
+import { deleteClient } from '../redux/slice/clientList';
 
 const ChatMain = ({ messages, typingStatus, scrollRef }) => {
+    const dispatch = useDispatch();
     const navigate = useNavigate()
+
+    const clientName = useSelector((state) => state.clientState.value);
+
     const handleLogOut = () => {
-        localStorage.removeItem("userName")
+        dispatch(deleteClient())
+        localStorage.removeItem("userToken")
         navigate("/")
         window.location.reload()
     }
@@ -19,9 +26,9 @@ const ChatMain = ({ messages, typingStatus, scrollRef }) => {
 
             <div className='mainMessageDiv'>
                 {messages.map(message => (
-                    message.name === localStorage.getItem("userName") ? (
+                    message.name === clientName ? (
                         <div className="chatsMessages" key={message.id}>
-                            <p className='sender'>You</p>
+                            <p className='sender'>{clientName ?? ""}</p>
                             <div className='senderDiv' ref={scrollRef}>
                                 <p>{message.text}</p>
                             </div>

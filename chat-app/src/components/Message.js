@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
+import { useSelector } from "react-redux";
 
 const Message = ({ socket, setMessages, messages }) => {
     const [message, setMessage] = useState("")
-    const handleTyping = () => socket.emit("typing", `${localStorage.getItem("userName")} is typing`)
+
+    const clientName = useSelector((state) => state.clientState.value);
 
     const handleSendMessage = (e) => {
         e.preventDefault()
         setMessages([...messages, {
             text: message,
-            name: localStorage.getItem("userName"),
+            name: clientName,
             id: `${socket.id}${Math.random()}`,
             socketID: socket.id
         }])
@@ -27,7 +29,6 @@ const Message = ({ socket, setMessages, messages }) => {
                     className='message'
                     value={message}
                     onChange={e => setMessage(e.target.value)}
-                    onKeyDown={handleTyping}
                 />
                 <button className="sendingMessageBtn">SEND</button>
             </form>

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import List from './List'
 import ChatMain from './ChatMain'
 import Message from './Message'
+import RightBar from './RightBar'
 
 const ChatPage = ({ socket }) => {
     const scrollRef = useRef(null);
@@ -33,6 +34,7 @@ const ChatPage = ({ socket }) => {
                 <ChatMain messages={messages} typingStatus={typingStatus} scrollRef={scrollRef} />
                 <Message socket={socket} setMessages={setMessages} messages={messages} />
             </div>
+            <div className="rightBar"><RightBar /></div>
         </div>
     )
 }

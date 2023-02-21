@@ -21,11 +21,138 @@
 
  .chatMain {
    height: 100%;
-   flex: 0.8;
+   flex: 0.6;
  }
 
  /* -- */
 
+
+
+
+ /* RightBar */
+ .rightBar {
+   height: 100%;
+   flex: 0.2;
+   background-color: #ffff;
+   width: 100%;
+
+ }
+
+ .RightBarRow {
+   width: 100%;
+   margin: 0px !important;
+ }
+
+ .logoCol {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 340px;
+   height: 218px;
+
+   background: #1E2532;
+ }
+
+ .logoColRow {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .logoColheader {
+   color: #f4f8ff;
+   font-size: 4rem !important;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .logoColheader4 {
+   color: #000000;
+   font-size: 2rem !important;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+
+ .emailCol {
+   width: 340px;
+   height: 218px;
+   background: #FFFFFF;
+   border-bottom: 1px solid #e2dada;
+ }
+
+ .emailColRow {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+ }
+
+ .emailColheader {
+   color: #8B8B8B;
+   font-size: 14px !important;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+ }
+
+ .emailColheaderP {
+   color: #000000;
+   font-size: 16px !important;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+ }
+
+ .cardRow {
+   width: 60%;
+ }
+
+ .cardRowCard {
+   width: 66px;
+   height: 22px;
+   background-color: #A3B8E0 !important;
+   color: #f4f8ff !important;
+ }
+
+ .labelCol {
+   width: 340px;
+   height: 100px;
+   background: #FFFFFF;
+   border-bottom: 1px solid #e2dada;
+ }
+
+ .viewAllBtn {
+   font-size: 14px;
+   cursor: pointer;
+   background-color: #ffff;
+   color: #52a6fa;
+   outline: none;
+   border: 0px;
+   border-radius: 0px;
+ }
+
+ .reactBtnRow {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-top: 240px;
+
+ }
+
+ .reactBtn {
+   padding: 9px;
+   font-size: 14px;
+   cursor: pointer;
+   background-color: #fb8199;
+   color: #f9f5eb;
+   outline: none;
+   border: solid 1px;
+   border-radius: 20px;
+ }
+
+ /* -- */
 
  /* ChatMain */
  .mainHeader {
@@ -35,24 +162,48 @@
    align-items: center;
    justify-content: space-between;
    padding: 20px;
-   background-color: #9a9a9a;
+   background-color: #fff;
+ }
+
+ .mainHeaderRow {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
  }
 
  .messagegetter {
-   background-color: #cf97b5;
-   width: 300px;
-   padding: 10px;
-   border-radius: 10px;
+   background-color: #ffff;
+   width: 165px;
+   padding: 4px;
    font-size: 15px;
+   color: #000000;
+   border-bottom-right-radius: 19px;
+   border-top-right-radius: 19px;
+   border-top-left-radius: 19px;
  }
 
+ .messagegetter>p {
+   padding: 8px;
+   margin: 0px;
+ }
+
+
  .senderDiv {
-   background-color: rgb(194, 228, 243);
-   max-width: 300px;
-   padding: 10px;
-   border-radius: 10px;
+   background-color: #03aaf3;
+   max-width: 165px;
+   padding: 4px;
+   border-bottom-left-radius: 19px;
+   border-top-right-radius: 19px;
+   border-top-left-radius: 19px;
    margin-left: auto;
    font-size: 15px;
+   color: #fff;
+ }
+
+ .senderDiv>p {
+   padding: 8px;
+   margin: 0px;
  }
 
  .status {
@@ -65,7 +216,8 @@
  .mainMessageDiv {
    width: 100%;
    height: 80vh;
-   background-color: #fff;
+   background: #f4f8ff;
+   box-shadow: 0px 0px 54px rgba(0, 0, 0, 0.25);
    padding: 20px;
    overflow-y: scroll;
  }
@@ -87,7 +239,7 @@
    padding: 9px;
    font-size: 14px;
    cursor: pointer;
-   background-color: #cf97b5;
+   background-color: #fb8199;
    color: #f9f5eb;
    outline: none;
    border: solid 1px;
@@ -95,7 +247,7 @@
  }
 
  .logOutBtn:hover {
-   background-color: #9f7f90;
+   background-color: #9d5261;
  }
 
  /* -- */
@@ -153,10 +305,18 @@
 
  .leftbar {
    height: 100%;
-   background-color: #9a9a9a;
+   background-color: #fff;
    flex: 0.2;
-   padding: 20px;
    border-right: 1px solid #fdfdfd;
+ }
+
+ .leftbarRow {
+   height: 100%
+ }
+
+ .namesClass {
+   background: rgba(30, 37, 50, 0.08);
+   border: 1px solid #E8E8E8;
  }
 
  /* -- */
@@ -173,7 +333,7 @@
 
  .sendingMessage {
    padding: 10px;
-   background-color: #9a9a9a;
+   background-color: #ffff;
    height: 10vh;
  }
 
@@ -181,9 +341,15 @@
    width: 80%;
    height: 100%;
    border-radius: 10px;
-   border: 1px solid #ddd;
+   border: 1px solid #f6f6f6;
    outline: none;
    padding: 15px;
+ }
+
+ ::placeholder {
+   color: #03aaf3;
+   opacity: 1;
+   /* Firefox */
  }
 
  .sendingMessageBtn {
@@ -191,15 +357,13 @@
    padding: 9px;
    font-size: 14px;
    cursor: pointer;
-   background-color: rgb(139, 199, 224);
-   color: #f9f5eb;
+   background-color: #ffff;
+   color: #b1b1b1;
    outline: none;
-   border: solid 1px;
-   border-radius: 10px;
+   border: 0px;
+   border-radius: 0px;
  }
 
- .sendingMessageBtn:hover {
-   background-color: rgb(120, 140, 149);
- }
+
 
  /* -- */

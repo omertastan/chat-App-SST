@@ -1,4 +1,6 @@
 import React from 'react'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 import { deleteClient } from '../redux/slice/clientList';
@@ -19,8 +21,18 @@ const ChatMain = ({ messages, typingStatus, scrollRef }) => {
     return (
         <>
             <header className='mainHeader'>
-                <p>Chat with Botty</p>
-                <button className='logOutBtn' onClick={handleLogOut}>Log Out</button>
+                <Row className='mainHeaderRow px-3 py-2'>
+                    <Col xs={8} className="px-5">
+                        <Row className="px-5 pt-2">
+                            <Col xs={12}><p>ssttek</p></Col>
+                            <Col xs={12}><p>Chat with Botty</p></Col>
+                        </Row>
+                    </Col>
+                    <Col xs={4}><button className='logOutBtn' onClick={handleLogOut}>Log Out</button></Col>
+                </Row>
+
+
+
             </header>
 
 
